@@ -12,10 +12,9 @@ spec:
   sources:
     - repoURL: 'git@github.com:evil-cloud/resillience-poc-cache-redis-k8s.git'
       targetRevision: main
-      ref: values
       helm:
         valueFiles:
-          - values/redis-values.yaml
+          - values.yaml
 
   project: default
 
