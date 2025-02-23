@@ -1,0 +1,11 @@
+repositories:
+  - name: dandydev-charts
+    url: https://dandydeveloper.github.io/charts/
+
+releases:
+  - name: redis
+    namespace: circuit-breaker-app
+    chart: dandydev-charts/redis-ha
+    values:
+      - values/redis-values.yaml
+
