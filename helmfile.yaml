@@ -7,5 +7,5 @@ releases:
     namespace: circuit-breaker-app
     chart: dandydev-charts/redis-ha
     values:
-      - values.yaml
+      - values/values.yaml
 

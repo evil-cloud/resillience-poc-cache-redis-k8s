@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   destination:
-    namespace: redis
+    namespace: circuit-breaker-app
     server: 'https://kubernetes.default.svc'
   sources:
     - repoURL: 'https://dandydeveloper.github.io/charts/'
@@ -14,11 +14,11 @@ spec:
       targetRevision: 4.4.2
       helm:
         valueFiles:
-          - $values/values.yaml
-    - repoURL: 'git@github.com:evil-cloud/circuit-breaker-app.git'
-      targetRevision: main
+          - $values/values/values.yaml
+    - repoURL: 'git@github.com:evil-cloud/resillience-poc-cache-redis-k8s.git'
+      targetRevision: HEAD
       ref: values
-      path: values
+
   syncPolicy:
     automated:
       prune: true
