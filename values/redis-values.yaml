@@ -33,7 +33,7 @@ imagePullSecrets: []
 # - name: "image-pull-secret"
 
 # -- Number of redis master/slave
-replicas: 3
+replicas: 4
 
 ## Customize the statefulset pod management policy:
 ## ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#pod-management-policies
