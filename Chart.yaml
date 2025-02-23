@@ -1,9 +1,0 @@
-apiVersion: v2
-name: circuit-breaker-cache
-type: application
-version: 1.0.0
-appVersion: "1.0.0"
-dependencies:
-  - name: redis-ha
-    version: 4.4.2
-    repository: https://dandydeveloper.github.io/charts/
