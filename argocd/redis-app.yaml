@@ -10,11 +10,7 @@ spec:
     server: 'https://kubernetes.default.svc'
 
   sources:
-    - repoURL: 'https://dandydeveloper.github.io/charts/'
-      targetRevision: 4.4.2
-      chart: redis-ha
-    
-    - repoURL: 'https://github.com/evil-cloud/resillience-poc-cache-redis-k8s.git'
+    - repoURL: 'git@github.com:evil-cloud/resillience-poc-cache-redis-k8s.git'
       targetRevision: main
       ref: values
       helm:
@@ -25,8 +21,8 @@ spec:
 
   syncPolicy:
     automated:
-      prune: false
-      selfHeal: false
+      prune: true
+      selfHeal: true
 
     syncOptions:
       - CreateNamespace=true
