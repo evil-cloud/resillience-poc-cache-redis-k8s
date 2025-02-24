@@ -7,5 +7,5 @@ releases:
     namespace: cache
     chart: dandydev-charts/redis-ha
     values:
-      - values/values.yaml
+      - values/values-dev.yaml
 
