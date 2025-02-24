@@ -14,7 +14,7 @@ spec:
       targetRevision: 4.4.2
       helm:
         valueFiles:
-          - $values/values/values.yaml
+          - $values/values/values-dev.yaml
     - repoURL: 'git@github.com:evil-cloud/resillience-poc-cache-redis-k8s.git'
       targetRevision: HEAD
       ref: values
