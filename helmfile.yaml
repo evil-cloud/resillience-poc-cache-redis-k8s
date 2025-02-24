@@ -4,7 +4,7 @@ repositories:
 
 releases:
   - name: redis
-    namespace: circuit-breaker-app
+    namespace: cache
     chart: dandydev-charts/redis-ha
     values:
       - values/values.yaml
