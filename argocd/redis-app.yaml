@@ -6,12 +6,12 @@ metadata:
 spec:
   project: default
   destination:
-    namespace: circuit-breaker-api
+    namespace: circuit-breaker-app
     server: 'https://kubernetes.default.svc'
   sources:
     - repoURL: 'https://dandydeveloper.github.io/charts/'
       chart: redis-ha
-      targetRevision: 4.4.2
+      targetRevision: 4.32.0
       helm:
         valueFiles:
           - $values/values/values-dev.yaml
