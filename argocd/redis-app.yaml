@@ -3,11 +3,16 @@ kind: Application
 metadata:
   name: redis-ha
   namespace: argocd
+
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+
 spec:
   project: default
   destination:
     namespace: circuit-breaker-app
     server: 'https://kubernetes.default.svc'
+
   sources:
     - repoURL: 'https://dandydeveloper.github.io/charts/'
       chart: redis-ha
@@ -15,6 +20,9 @@ spec:
       helm:
         valueFiles:
           - $values/values/values-dev.yaml
+        skipSchemaValidation: false
+        skipCrds: false
+
     - repoURL: 'git@github.com:evil-cloud/resillience-poc-cache-redis-k8s.git'
       targetRevision: HEAD
       ref: values
@@ -23,6 +31,21 @@ spec:
     automated:
       prune: true
       selfHeal: true
+      allowEmpty: true
     syncOptions:
+      - Validate=true
       - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
+      - ApplyOutOfSyncOnly=true
+      - RespectIgnoreDifferences=true
+      - ignoreMissingValueFiles=true
 
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+
+  revisionHistoryLimit: 5
