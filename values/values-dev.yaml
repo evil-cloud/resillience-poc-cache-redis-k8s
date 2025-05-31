@@ -116,7 +116,7 @@ haproxy:
     # -- Port for the read-only redis-slaves
     port: 6380
   # -- Number of HAProxy instances
-  replicas: 3
+  replicas: 1
   # -- Deployment strategy for the haproxy deployment
   deploymentStrategy:
     type: RollingUpdate
